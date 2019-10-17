@@ -646,9 +646,11 @@ public abstract class StringUtils {
 	 * @return the normalized path
 	 */
 	public static String cleanPath(String path) {
+		// 这个地方写的反逻辑
 		if (!hasLength(path)) {
 			return path;
 		}
+
 		String pathToUse = replace(path, WINDOWS_FOLDER_SEPARATOR, FOLDER_SEPARATOR);
 
 		// Shortcut if there is no work to do

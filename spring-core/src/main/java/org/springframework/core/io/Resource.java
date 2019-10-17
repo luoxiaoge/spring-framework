@@ -56,6 +56,7 @@ public interface Resource extends InputStreamSource {
 	 * <p>This method performs a definitive existence check, whereas the
 	 * existence of a {@code Resource} handle only guarantees a valid
 	 * descriptor handle.
+	 * 确认资源是否实际存在
 	 */
 	boolean exists();
 
@@ -104,6 +105,8 @@ public interface Resource extends InputStreamSource {
 	URL getURL() throws IOException;
 
 	/**
+	 * URI，通一资源标志符(Uniform Resource Identifier， URI)，表示的是web上每一种可用的资源，如 HTML文档、图像、视频片段、程序等都由一个URI进行定位的。
+	 * URL是URI的一个子集。它是Uniform Resource Locator的缩写，译为“统一资源定位 符”。
 	 * Return a URI handle for this resource.
 	 * @throws IOException if the resource cannot be resolved as URI,
 	 * i.e. if the resource is not available as descriptor
@@ -153,7 +156,7 @@ public interface Resource extends InputStreamSource {
 	 * Create a resource relative to this resource.
 	 * @param relativePath the relative path (relative to this resource)
 	 * @return the resource handle for the relative resource
-	 * @throws IOException if the relative resource cannot be determined
+	 * @throws IOException if the relative resource cannot be determined //如果无法确定相关资源
 	 */
 	Resource createRelative(String relativePath) throws IOException;
 
